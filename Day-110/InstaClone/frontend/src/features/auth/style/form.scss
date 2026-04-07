@@ -1,0 +1,103 @@
+main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(120deg, #833ab4, #fd1d1d, #fcb045);
+    background-size: 300% 300%;
+    animation: gradientMove 20s ease infinite;
+
+    .form-container {
+        width: 320px;
+        padding: 30px;
+        background: white;
+        border-radius: 12px;
+        text-align: center;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        animation: fadeIn 1s ease;
+
+    p {
+        margin-top: 15px;
+        font-size: 14px;
+        color: #555;
+        white-space: nowrap;
+
+        a {
+            color: #3897f0;
+            font-weight: 600;
+            text-decoration: none;
+            margin-left: 5px;
+            transition: 0.3s;
+
+            &:hover {
+                text-decoration: underline;
+                color: #1877f2;
+            }
+        }
+    }    
+        h1 {
+            margin-bottom: 20px;
+            color: #262626;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+
+            input {
+                padding: 10px;
+                border-radius: 6px;
+                border: 1px solid #dbdbdb;
+                font-size: 14px;
+                outline: none;
+                transition: 0.3s;
+
+                &:focus {
+                    border-color: #833ab4;
+                    box-shadow: 0 0 5px rgba(131,58,180,0.3);
+                }
+            }
+
+            button {
+                padding: 10px;
+                border: none;
+                border-radius: 6px;
+                background: linear-gradient(90deg,#833ab4,#fd1d1d,#fcb045);
+                color: white;
+                font-weight: 600;
+                cursor: pointer;
+                transition: transform 0.2s;
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+        }
+    }
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
